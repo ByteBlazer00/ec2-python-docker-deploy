@@ -19,7 +19,7 @@ Guide to deploying a Python Flask app on AWS EC2 using Docker
 
 ---
 
-## 1️⃣ Launch EC2 Instance
+# 1️⃣ Launch EC2 Instance
 
 1. Go to [EC2 Dashboard](https://console.aws.amazon.com/ec2)
 2. Launch instance with:
@@ -38,9 +38,9 @@ Guide to deploying a Python Flask app on AWS EC2 using Docker
        
    - **Storage:** 8 GiB (gp3)
 
----
 
-## 2️⃣ Install Docker on EC2
+
+# 2️⃣ Install Docker on EC2
 
 sudo apt update
 sudo apt install -y docker.io
@@ -53,14 +53,14 @@ newgrp docker
 docker --version
 
 
-## 3️⃣ Create Python Flask App
+# 3️⃣ Create Python Flask App
 
 - create a directory
   
 mkdir python-app && cd python-app
 
-## 1. inside the directory create a file for app
-# Create app.py:
+# 1. inside the directory create a file for app
+## Create app.py:
 
   nano app.py
 
@@ -69,8 +69,8 @@ mkdir python-app && cd python-app
 - press enter to save the file with the name
 - now exit with ctrl + x
 
-## 2. inside the directory create a file for requirements
-# Create requirements.txt:
+# 2. inside the directory create a file for requirements
+## Create requirements.txt:
 
   nano requirements.txt
 
@@ -79,8 +79,8 @@ mkdir python-app && cd python-app
 - press enter to save the file with the name
 - now exit with ctrl + x
 
-## 3. inside the directory create a file for Dockerfile
-# Create Dockerfile:
+# 3. inside the directory create a file for Dockerfile
+## Create Dockerfile:
 
    nano Dockerfile
 
@@ -90,20 +90,20 @@ mkdir python-app && cd python-app
 - now exit with ctrl + x
 
 
-## 4️⃣ Docker Hub Login on EC2 
+# 4️⃣ Docker Hub Login on EC2 
  
  Log in to Docker Hub 
  
 docker login  # Enter username and password or access token
 
-# to create a personal access token
+## to create a personal access token
 - go to docker hub settings > Personal access tokens > generate new token 
 
 docker login -u <your-username>
 
 - for  password enter the password given in token
 
-## 5️⃣ Build & Push Docker Image on EC2
+# 5️⃣ Build & Push Docker Image on EC2
 
 docker build -t docker.io/<your-username>/python-app:latest .
 docker images  # Verify image
@@ -112,14 +112,14 @@ docker push docker.io/<your-username>/python-app:latest
  Verify in Docker Hub: hub.docker.com > python-app > latest tag 
 
 
-## 6️⃣ Run Docker Container
+# 6️⃣ Run Docker Container
 
  docker run -d -p 5000:5000 --name python-app docker.io/<your-username>/python-app:latest
  docker ps
  docker logs python-app
 
 
-## 7️⃣ Test the App
+# 7️⃣ Test the App
 
 Open your browser and navigate to:
 
@@ -132,10 +132,10 @@ Client → EC2 Public IP:5000 → Ubuntu Host → Docker Container → Python Fl
 
 
 
-# Troubleshoot:
-# - Check security group allows port 5000
-# - Verify container: docker ps
-# - Check logs: docker logs python-app
+## Troubleshoot:
+ - Check security group allows port 5000
+ - Verify container: docker ps
+ - Check logs: docker logs python-app
 
 ## Clean Up to Avoid Billing
 

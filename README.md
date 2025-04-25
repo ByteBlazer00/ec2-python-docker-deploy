@@ -90,17 +90,18 @@ mkdir python-app && cd python-app
 - now exit with ctrl + x
 
 
-## 4️⃣ Docker Hub Setup 
+## 4️⃣ Docker Hub Login on EC2 
+ 
+ Log in to Docker Hub 
+ 
+docker login  # Enter username and password or access token
 
-1. Log in:  login on your docker hub account
+## to create a personal access token
+- go to docker hub settings > Personal access tokens > generate new token 
 
-2. Create repository: Name: python-app, Visibility: Private
-- Create private repository in Docker Hub:
-- Go to hub.docker.com > Create Repository > Name: python-app > Visibility: Private > Create
-- Note repository: docker.io/<your-username>/python-app
+docker login -u <your-username>
 
-4. Example tag: docker.io/<your-username>/python-app
-
+- for  password enter the password given in token
 
 ## 5️⃣ Build & Push Docker Image on EC2
 

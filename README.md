@@ -59,7 +59,7 @@ docker --version
   
 mkdir python-app && cd python-app
 
-1. inside the directory create a file for app
+## 1. inside the directory create a file for app
 # Create app.py:
 
   nano app.py
@@ -69,7 +69,7 @@ mkdir python-app && cd python-app
 - press enter to save the file with the name
 - now exit with ctrl + x
 
-2. inside the directory create a file for requirements
+## 2. inside the directory create a file for requirements
 # Create requirements.txt:
 
   nano requirements.txt
@@ -79,7 +79,7 @@ mkdir python-app && cd python-app
 - press enter to save the file with the name
 - now exit with ctrl + x
 
-3. inside the directory create a file for Dockerfile
+## 3. inside the directory create a file for Dockerfile
 # Create Dockerfile:
 
    nano Dockerfile
@@ -96,7 +96,7 @@ mkdir python-app && cd python-app
  
 docker login  # Enter username and password or access token
 
-## to create a personal access token
+# to create a personal access token
 - go to docker hub settings > Personal access tokens > generate new token 
 
 docker login -u <your-username>
@@ -109,7 +109,7 @@ docker build -t docker.io/<your-username>/python-app:latest .
 docker images  # Verify image
 docker push docker.io/<your-username>/python-app:latest
 
-# Verify in Docker Hub: hub.docker.com > python-app > latest tag 
+ Verify in Docker Hub: hub.docker.com > python-app > latest tag 
 
 
 ## 6️⃣ Run Docker Container
@@ -121,7 +121,7 @@ docker push docker.io/<your-username>/python-app:latest
 
 ## 7️⃣ Test the App
 
-## Open your browser and navigate to:
+Open your browser and navigate to:
 
 http://<EC2-PUBLIC-IP>:5000
 
@@ -143,7 +143,7 @@ docker stop python-app
 docker rm python-app
 
 
-🎉 You're Done!
+## 🎉 You're Done!
 You've successfully deployed a Python Flask app on EC2 using Docker.
 
 
